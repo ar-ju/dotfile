@@ -3,9 +3,9 @@ dotfiles
 ドットファイルを作ってみた。  
 管理しているファイル  
 dotfiles  
-├─README.md  
-├─.bin/  
+├─install.sh    
 ├─.tmux/  
 │   └─.tmux.conf  
 ├─.vimrc  
-└─.zshrc
+├─.zshrc  
+└─README.md
