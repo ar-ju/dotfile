@@ -6,6 +6,6 @@ dotfiles
 ├─README.md  
 ├─.bin/  
 ├─.tmux/  
-│   └──.tmux.conf  
+│   └─.tmux.conf  
 ├─.vimrc  
 └─.zshrc
