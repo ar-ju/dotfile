@@ -4,7 +4,7 @@ dotfiles
 管理しているファイル  
 dotfiles  
 ├── .tmux  
-│    └── .tmux.conf  
+│      └── .tmux.conf  
 ├── .vimrc   
 ├── .zshrc   
 ├── README.md   
