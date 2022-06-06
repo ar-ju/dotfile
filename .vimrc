@@ -149,4 +149,7 @@ if has('persistent_undo')
     exe 'set undodir=' .. undo_path
     set undofile
 endif
+
+" Undo可能な数の最大値
+set undolevels=50
 "---*----*----*----*----*----*-----*------*----
