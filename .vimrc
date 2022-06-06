@@ -120,6 +120,9 @@ set wildmenu
 set foldmethod=indent
 
 " *-*-*-*-* indent *-*-*-*-*
+" オートインデント
+set autoindent
+
 " インデントを自動で整える
 set smartindent
 
@@ -136,4 +139,14 @@ set softtabstop=4
 au Filetype make set noexpandtab
 
 " *-*-*-*-* *-*-*-* *-*-*-*-*
+
+"----------------------------------------
+" 詳細設定
+"----------------------------------------
+" Undo/Redo 永続化
+if has('persistent_undo')
+    let undo_path = expand('~/.vim/undo')
+    exe 'set undodir=' .. undo_path
+    set undofile
+endif
 "---*----*----*----*----*----*-----*------*----
