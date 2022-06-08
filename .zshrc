@@ -57,7 +57,7 @@ alias gls="gls --color"
 
 #zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 # tmuxを256色表示で立ち上げる
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
 
 # ---------------------------
 # Prompt
