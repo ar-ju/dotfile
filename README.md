@@ -5,6 +5,8 @@ dotfiles
 dotfiles  
 ├── .tmux  
 │      └── .tmux.conf  
+├── .vim  
+│      └── colors #カラースキーム沢山  
 ├── .vimrc   
 ├── .zshrc   
 ├── README.md   
