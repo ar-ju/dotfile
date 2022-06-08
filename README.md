@@ -1,13 +1,13 @@
 dotfiles
 ===============
-ドットファイルを作ってみた。  
-管理しているファイル  
-dotfiles  
-├── .tmux  
-│      └── .tmux.conf  
-├── .vim  
-│      └── colors #カラースキーム沢山  
-├── .vimrc   
-├── .zshrc   
-├── README.md   
-└── install.sh
+ドットファイルを作ってみた。<br>
+管理しているファイル<br>
+dotfiles<br>
+├── .tmux<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;└── .tmux.conf<br> 
+├── .vim<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;└── colors #カラースキーム沢山<br> 
+├── .vimrc<br>
+├── .zshrc<br>
+├── README.md<br>  
+└── install.sh<br>
