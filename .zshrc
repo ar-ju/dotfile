@@ -45,6 +45,9 @@ TIMEFMT=$'\n\n========================\nProgram : %J\nCPU     : %P\nuser    : %*
 autoload -U compinit
 compinit
 
+# コマンドのスペルを訂正する
+setopt correct
+
 # ---------------------------
 # エイリアス
 # --------------------------
