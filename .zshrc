@@ -83,7 +83,8 @@ alias rm="rm -iv"
 # %* : 時間(hh:flag_mm:ss)
 # %T : 時間(hh:mm)
 # %t : 時間(hh:mm(am/pm))
-PROMPT='%F{black}%n%f[%D(%*)]@%F{blue}%~/%f '
+PROMPT='[%D(%*)]@%F{blue}%~%f '
+#PROMPT='%F{black}%n%f[%D(%*)]@%F{blue}%~/%f '
 
 export PATH="/usr/local/sbin:$PATH"
 
