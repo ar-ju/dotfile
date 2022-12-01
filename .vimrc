@@ -158,7 +158,7 @@ set clipboard=unnamed,autoselect
 """ plugin　設定 (plugin manegerはdein.vimを使用,ゴリラのvim講座を参考)
 " dein.vim settings {{{
 " install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
+let s:dein_dir = expand('~/.vim/bundle')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 " }}}
 
@@ -176,7 +176,7 @@ if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
 
     " .toml file (プラグインのリスト)
-    let s:rc_dir = expand('~/.vim/rc')
+    let s:rc_dir = expand(s:dein_dir . '/rc')
     if !isdirectory(s:rc_dir)
         call mkdir(s:rc_dir,'p')
     endif
