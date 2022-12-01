@@ -52,7 +52,17 @@ if has('syntax') && has('eval')
 packadd! matchit
 endif
 
-"---*------*------*------*------*-------*---
+" ---*------*------*------*------*-------*---
+
+" True color 対応!!
+set termguicolors
+
+" カラースキーマを変更(現在はseoul256のdark)
+"set background=dark
+syntax enable
+"let g:solarized_termcolors=256
+colorscheme seoul256
+
 "----------------------------------------
 " 検索
 "----------------------------------------
@@ -74,12 +84,6 @@ set hlsearch
 "----------------------------------------
 " 表示設定
 "----------------------------------------
-"
-" カラースキーマを変更(現在はseoul256のdark)
-syntax enable
-set background=dark
-colorscheme seoul256
-
 " タイトルを表示
 set title
 
