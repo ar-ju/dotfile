@@ -48,6 +48,11 @@ compinit
 # コマンドのスペルを訂正する
 setopt correct
 
+# brew fileを使用するための準備
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+    source $(brew --prefix)/etc/brew-wrap
+fi
+
 # ---------------------------
 # エイリアス
 # --------------------------
