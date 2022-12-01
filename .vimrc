@@ -53,6 +53,8 @@ packadd! matchit
 endif
 
 " ---*------*------*------*------*-------*---
+" True color 対応!!
+set termguicolors
 
 " True color 対応!!
 set termguicolors
