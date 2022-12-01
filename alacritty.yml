@@ -1,0 +1,9 @@
+# カラースキーマ設定(alacritty theme使用) : palenight
+import:
+    - ~/colorscheme/alacritty-colorscheme/themes/solarized_light.yaml
+
+window.opacity: 0.85
+
+scrolling:
+    #consoleのlogを10000行まで保持する
+    history: 10000
