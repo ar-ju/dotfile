@@ -16,6 +16,7 @@
 !.gitignore
 !.tmux.conf
 !Brewfile*
+!alacritty.yml
 
 !README.md
 !install.sh
