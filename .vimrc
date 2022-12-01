@@ -53,10 +53,13 @@ if has('syntax') && has('eval')
 endif
 
 " ---*------*------*------*------*-------*---
+" True color 対応!!
+set termguicolors
 
 " カラースキーマを変更(現在はseoul256のdark)
+"set background=dark
 syntax enable
-set background=dark
+"let g:solarized_termcolors=256
 colorscheme seoul256
 
 "----------------------------------------
