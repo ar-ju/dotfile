@@ -15,8 +15,8 @@
 !.vim/colors/**
 !.gitignore
 !.tmux.conf
-!Brewfile*
 
 !README.md
 !install.sh
 !brew_update.sh
+!Brewfile_*
