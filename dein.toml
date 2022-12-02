@@ -1,0 +1,6 @@
+# ########### #
+# colorscheme #
+# ########### #
+[[plugins]]
+repo = 'drewtempelmeyer/palenight.vim'
+
