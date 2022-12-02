@@ -60,7 +60,7 @@ set termguicolors
 set termguicolors
 
 " カラースキーマを変更(現在はseoul256のdark)
-"set background=dark
+set background=dark
 syntax enable
 "let g:solarized_termcolors=256
 colorscheme seoul256

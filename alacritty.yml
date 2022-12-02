@@ -1,6 +1,6 @@
 # カラースキーマ設定(alacritty theme使用) : solarized_light
 import:
-    - ~/colorscheme/alacritty-colorscheme/themes/solarized_light.yaml
+    - ~/colorscheme/alacritty-colorscheme/themes/palenight.yml #solarized_light.yaml
 
 window.opacity: 0.85
 
