@@ -163,26 +163,32 @@ set clipboard=unnamed,autoselect
 "---*----*----*----*----*----*-----*------*----
 """ plugin　設定 (plugin manegerはdein.vimを使用,ゴリラのvim講座を参考)
 " dein.vim settings {{{
+if &compatible
+    set nocompatible        " Be iMproved
+endif
+
 " install dir {{{
-let s:dein_dir = expand('~/.vim/bundle')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let s:dein_dir = expand('~/.vim/dein/repos')
+let s:dein_repo_dir = s:dein_dir . '/github.com/Shougo/dein.vim'
 " }}}
 
 " dein installation check {{{
-if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-    endif
-    execute 'set runtimepath^=' . s:dein_repo_dir
-endif
+"if &runtimepath !~# '/dein.vim'
+"    if !isdirectory(s:dein_repo_dir)
+"        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+"    endif
+"    execute 'set runtimepath^=' . s:dein_repo_dir
+"endif
 " }}}
+
+execute 'set runtimepath+=' . s:dein_repo_dir
 
 " begin settings {{{
 if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
 
     " .toml file (プラグインのリスト)
-    let s:rc_dir = expand(s:dein_dir . '/rc')
+    let s:rc_dir = expand('~/.vim')
     if !isdirectory(s:rc_dir)
         call mkdir(s:rc_dir,'p')
     endif
