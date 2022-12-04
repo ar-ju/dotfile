@@ -2,5 +2,5 @@
 # colorscheme #
 # ########### #
 [[plugins]]
-repo = 'drewtempelmeyer/palenight.vim'
+repo = 'kaicataldo/material.vim'
 
