@@ -51,19 +51,85 @@ augroup END
 if has('syntax') && has('eval')
 packadd! matchit
 endif
+" ---*------*------*------*------*-------*---
+""" plugin　設定 (plugin manegerはdein.vimを使用,ゴリラのvim講座を参考)
+" dein.vim settings {{{
+if &compatible
+    set nocompatible        " Be iMproved
+endif
+
+" install dir {{{
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" }}}
+
+" dein installation check {{{
+if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_dir)
+        call mkdir(s:dein_dir)
+    endif
+    if !isdirectory(s:dein_repo_dir)
+        let s:output_file = s:dein_dir . '/installer.sh'
+        execute '!curl -o '.s:output_file.' https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh'
+        execute '!sh' s:output_file  s:dein_dir
+    endif
+    execute 'set runtimepath^=' . s:dein_repo_dir
+endif
+" }}}
+
+" execute 'set runtimepath+=' . s:dein_repo_dir
+
+" begin settings {{{
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+
+    " .toml file (プラグインのリスト)
+    let s:rc_dir = expand('~/.vim')
+    if !isdirectory(s:rc_dir)
+        call mkdir(s:rc_dir,'p')
+    endif
+    let s:toml = s:rc_dir . '/dein.toml'
+
+    " read toml and cache
+    call dein#load_toml(s:toml, {'lazy':0})
+
+    " end settings
+    call dein#end()
+    call dein#save_state()
+endif
+" }}}
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" plugin installation check {{{
+if dein#check_install()
+    call dein#install()
+endif
+" }}}
+
+" plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+    call map(s:removed_plugins, "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+endif
+" }}}
 
 " ---*------*------*------*------*-------*---
 " True color 対応!!
-set termguicolors
+if (has("termguicolors"))
+    set termguicolors
+endif
 
-" True color 対応!!
-set termguicolors
-
-" カラースキーマを変更(現在はseoul256のdark)
-set background=dark
-syntax enable
+" カラースキーマを変更(現在はmaterialのpalenight)
+" set background=dark
+let g:material_theme_style='palenight'
+let g:airline_theme='material'
+syntax on
 "let g:solarized_termcolors=256
-colorscheme seoul256
+colorscheme material
 
 "----------------------------------------
 " 検索
@@ -161,67 +227,4 @@ set guioptions+=a
 set clipboard=unnamed,autoselect
 
 "---*----*----*----*----*----*-----*------*----
-""" plugin　設定 (plugin manegerはdein.vimを使用,ゴリラのvim講座を参考)
-" dein.vim settings {{{
-if &compatible
-    set nocompatible        " Be iMproved
-endif
 
-" install dir {{{
-let s:dein_dir = expand('~/.vim/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-" }}}
-
-" dein installation check {{{
-if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_dir)
-        call mkdir(s:dein_dir)
-    endif
-    if !isdirectory(s:dein_repo_dir)
-        let s:output_file = s:dein_dir . '/installer.sh'
-        execute '!curl -o '.s:output_file.' https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh'
-        execute '!sh' s:output_file  s:dein_dir
-    endif
-    execute 'set runtimepath^=' . s:dein_repo_dir
-endif
-" }}}
-
-" execute 'set runtimepath+=' . s:dein_repo_dir
-
-" begin settings {{{
-if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-
-    " .toml file (プラグインのリスト)
-    let s:rc_dir = expand('~/.vim')
-    if !isdirectory(s:rc_dir)
-        call mkdir(s:rc_dir,'p')
-    endif
-    let s:toml = s:rc_dir . '/dein.toml'
-
-    " read toml and cache
-    call dein#load_toml(s:toml, {'lazy':0})
-
-    " end settings
-    call dein#end()
-    call dein#save_state()
-endif
-" }}}
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" plugin installation check {{{
-if dein#check_install()
-    call dein#install()
-endif
-" }}}
-
-" plugin remove check {{{
-let s:removed_plugins = dein#check_clean()
-if len(s:removed_plugins) > 0
-    call map(s:removed_plugins, "delete(v:val, 'rf')")
-    call dein#recache_runtimepath()
-endif
-" }}}
