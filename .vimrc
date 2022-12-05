@@ -123,13 +123,12 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-" カラースキーマを変更(現在はmaterialのpalenight)
+" カラースキーマを変更(現在はnight-owl)
 " set background=dark
-let g:material_theme_style='palenight'
-let g:airline_theme='material'
+" let g:material_theme_style='palenight'
+" let g:airline_theme='material'
 syntax on
-"let g:solarized_termcolors=256
-colorscheme material
+colorscheme night-owl
 
 "----------------------------------------
 " 検索
