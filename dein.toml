@@ -4,3 +4,5 @@
 [[plugins]]
 repo = 'kaicataldo/material.vim'
 
+[[plugins]]
+repo = 'haishanh/night-owl.vim'
