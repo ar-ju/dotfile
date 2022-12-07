@@ -7,3 +7,6 @@ window.opacity: 0.85
 scrolling:
     #consoleのlogを10000行まで保持する
     history: 10000
+
+key_bindings:
+    - { key: Minus,   mods: Command|Shift, action: IncreaseFontSize }
