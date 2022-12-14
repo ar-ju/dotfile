@@ -1,7 +1,7 @@
 # ---------------------------
 # Lang
 # ---------------------------
-#export LANG=ja_JP.UTF-8
+export LANG=ja_JP.UTF-8
 #export LESSCHARSET=utf-8
 
 # ---------------------------
@@ -69,6 +69,9 @@ alias rm="rm -iv"
 #zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 # tmuxを256色表示で立ち上げる
 #alias tmux="tmux -2"
+
+# tmuxをutf-8で起動
+alias tmux="tmux -u"
 
 # ---------------------------
 # Prompt
