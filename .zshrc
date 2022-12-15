@@ -77,10 +77,10 @@ alias tmux="tmux -u"
 # 関数
 # ---------------------------
 function swprm {
-    rm .*.swp;
-    rm *.swp;
-    rm .*~;
-    rm *~;
+    rm -f .*.swp;
+    rm -f *.swp;
+    rm -f .*~;
+    rm -f *~;
 }
 
 # ---------------------------
