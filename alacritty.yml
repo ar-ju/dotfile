@@ -1,13 +1,17 @@
 # カラースキーマ設定(alacritty theme使用) : palenight
 import:
-    - ~/.config/alacritty/alacritty-colorscheme/themes/solarized_light.yaml
+  - ~/.config/alacritty/alacritty-colorscheme/themes/solarized_light.yaml
+    #- ~/.config/alacritty/alacritty-colorscheme/themes/palenight.yml
+
+font:
+  size: 12
 
 window:
-  opacity: 0.85
+  opacity: 0.95
 
 scrolling:
     #consoleのlogを10000行まで保持する
-    history: 10000
+    history: 15000
 
 key_bindings:
     - { key: Minus,   mods: Command|Shift, action: IncreaseFontSize }
