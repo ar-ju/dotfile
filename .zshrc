@@ -74,18 +74,18 @@ alias rm="rm -iv"
 alias tmux="tmux -u"
 
 # ---------------------------
-# 関数
-# ---------------------------
-function swprm {
-    rm -f .*.swp;
-    rm -f *.swp;
-    rm -f .*~;
-    rm -f *~;
-}
-
-# ---------------------------
 # Prompt
 # ---------------------------
+# git 
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
+zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+
 # %M : ホスト名 
 # %m : ホスト名 
 # %d :  カレントディレクトリ(フルパス) 
@@ -101,10 +101,23 @@ function swprm {
 # %* : 時間(hh:flag_mm:ss)
 # %T : 時間(hh:mm)
 # %t : 時間(hh:mm(am/pm))
-PROMPT='[%D(%*)]@%F{blue}%~%f '
+PROMPT='
+[%D(%*)]@ %F{blue}%~%f $vcs_info_msg_0_
+%F{006}$%f%F{006}$%f%F{006}$%f '
+
 #PROMPT='%F{black}%n%f[%D(%*)]@%F{blue}%~/%f '
 
 export PATH="/usr/local/sbin:$PATH"
+
+# ---------------------------
+# 関数
+# ---------------------------
+function swprm {
+    rm -f .*.swp;
+    rm -f *.swp;
+    rm -f .*~;
+    rm -f *~;
+}
 
 # ---------------------------
 # ---------------------------
