@@ -103,7 +103,7 @@ precmd () { vcs_info }
 # %t : 時間(hh:mm(am/pm))
 PROMPT='
 [%D(%*)]@ %F{blue}%~%f $vcs_info_msg_0_
-%F{006}$%f%F{006}$%f%F{006}$%f '
+%F{009}$%f%F{009}$%f%F{009}$%f '
 
 #PROMPT='%F{black}%n%f[%D(%*)]@%F{blue}%~/%f '
 
