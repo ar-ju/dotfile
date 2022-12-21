@@ -6,3 +6,10 @@ repo = 'kaicataldo/material.vim'
 
 [[plugins]]
 repo = 'haishanh/night-owl.vim'
+
+# ########### #
+#   MarkDown  #
+# ########### #
+# Table
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
