@@ -19,3 +19,5 @@ scrolling:
 
 key_bindings:
     - { key: Minus,   mods: Command|Shift, action: IncreaseFontSize }
+    - { key: Yen,                          chars: "\x5C"            }
+    - { key: Yen,     mods: Alt,           chars: "\xA5"            }
