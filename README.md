@@ -1,7 +1,8 @@
-dotfiles
-===============
-ドットファイルを作ってみた。<br>
-管理しているファイル<br>
+# dotfiles
+My dotfiles.<br>
+<br><br>
+
+### 管理しているファイル<br>
 dotfiles/<br>
 ├─ .tmux/<br>
 │&nbsp;&nbsp;&nbsp;&nbsp;└─ .tmux.conf<br> 
