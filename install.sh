@@ -1,41 +1,46 @@
-#!/usr/sh
+#!/bin/sh
 
 set -u
 
 # 実行場所のディレクトリを取得
 THIS_DIR=$(cd $(dirname $0); pwd)
-# 実行場所のディレクトリに移動
-cd $THIS_DIR
 
 # dotfilesディレクトリにある、ドットから始まり2文字以上の名前のファイルに対して
-for f in .??*; do
-    [ "$f" = ".git" ] && continue
-    [ "$f" = ".gitconfig.local.template" ] && continue
-    [ "$f" = ".gitmodules" ] && continue
-
+filelist=.??*
+echo "filelist:${filelist}"
+for file in ${filelist}; do
+    f=$(basename ${file})
+# 無視するファイルたち
+    [ $f = ".git" ] && echo "${f} will not be done." && continue
+    [ $f = ".gitconfig.local.template" ] && echo "${f} will not be done." && continue
+    [ $f = ".gitmodules" ] && echo "${f} will not be done." && continue
+    [ $f = ".gitignore" ] && echo "${f} will not be done." && continue
+    [ $f = ".DS_Store" ] && echo "${f} will not be done." && continue
+    [ $f = ".tmux" ] && echo "${f} will not be done." && continue
+    [ $f = ".vim_old" ] && echo "${f} will not be done." && continue
+    
 # もしもそのファイルが既に
-    if [ -e ~/"$f" ]; then
-#存在する場合
-    print "The \"~/$f\" already exists!"
-    print "Replace $f? (Y/N):"
-    read reply
-    if []; then
-
-    else
-
-    fi
-
+    if [ -e "${HOME}/${f}" ] || [ -L "${HOME}/${f}" ]; then
+        #ホームディレクトリにファイルもしくはシンボリックリンクが存在する場合
+        echo "The \"${HOME}/${f}\" already exists! Replace ${f}? (Y/N):"
+        read reply
+        if [ ${reply} = "Y" ]; then
+            mv "${HOME}/${f}" "${THIS_DIR}/${f}_old"
+        else
+            echo "That file (${f}) will not be set!"
+            continue
+        fi
     fi
 
 # シンボリックリンクを貼る
-    ln -snfv ~/dotfiles/"$f" ~/
+    ln -snfv "${HOME}/dotfiles/$f" ${HOME}
 done
 
 cat << END
 
 *************************
 DOTFILES SETUP FINISHED!
-Please do "ls -la".
+Please do "ls -lA ~/".
 *************************
   ____             _ 
  | __ ) _   _  ___| |
